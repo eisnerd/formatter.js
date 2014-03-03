@@ -293,6 +293,9 @@ Formatter.prototype._formatValue = function (ignoreCaret) {
   if ((typeof ignoreCaret) === 'undefined' || ignoreCaret === false) {
     inptSel.set(this.el, this.newPos);
   }
+
+  if (this.opts.completed && this.newPos == this.mLength)
+    this.opts.completed();
 };
 
 //
